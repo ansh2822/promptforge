@@ -33,14 +33,15 @@ PromptForge App allows users to create prompts with tags and share them for use 
    `npm install`
 
 3. **Configure Environment Variables:**
-   ```Create a `.env.local` file with the following variables:
+   - Create a `.env.local` file with the following variables:
+   ```
    GOOGLE_ID = <your-google-id>
    GOOGLE_CLIENT_SECRET = <your-google-client-id>
    MONGODB_URI = <your-mongodb-uri>
-
-NEXTAUTH_URL = http://localhost:3000
-NEXTAUTH_URL_INTERNAL = http://localhost:3000
-NEXTAUTH_SECRET = <your-secret-code>```
+   NEXTAUTH_URL = http://localhost:3000
+   NEXTAUTH_URL_INTERNAL = http://localhost:3000
+   NEXTAUTH_SECRET = <your-secret-code>
+   ```
 
 4. **Run the Development Server:**
    `npm run dev`
