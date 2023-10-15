@@ -1,4 +1,5 @@
 # PromptForge App
+![HomePage](Home.png)
 
 PromptForge App allows users to create prompts with tags and share them for use with chatbots like GPT, Bard or other models. Users can create, view, edit, and delete prompts. The app uses Next.js, NextAuth.js for authentication with Google as the callback provider, and MongoDB Atlas as the database.
 
