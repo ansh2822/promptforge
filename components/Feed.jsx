@@ -41,16 +41,29 @@ const Feed = () =>
         fetchPosts();
     }, []);
 
-    const filterPrompts = (searchtext) =>
-    {
-        const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
-        return allPosts.filter(
-            (item) =>
-                regex.test(item.creator.username) ||
-                regex.test(item.tag) ||
-                regex.test(item.prompt)
-        );
-    };
+    // const filterPrompts = (searchtext) =>
+    // {
+    //     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    //     return allPosts.filter(
+    //         (item) =>
+    //             regex.test(item.creator.username) ||
+    //             regex.test(item.tag) ||
+    //             regex.test(item.prompt)
+    //     );
+    // };
+
+
+    const filterPrompts = (searchtext) => {
+    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    return allPosts.filter((item) => {
+        const creatorUsername = item.creator && item.creator.username; // Check if item.creator and item.creator.username are defined
+        return (
+            (creatorUsername && regex.test(creatorUsername)) ||
+            (item.tag && regex.test(item.tag)) ||
+            (item.prompt && regex.test(item.prompt))
+            );
+        });
+    };    
 
     const handleSearchChange = (e) =>
     {
